@@ -1,0 +1,16 @@
+{
+  "burgers": [
+    {
+      "id": 1,
+      "name": "Veggie"
+    },
+    {
+      "id": 2,
+      "name": "Bacon"
+    },
+    {
+      "id": 1,
+      "name": "Onion"
+    }
+  ]
+}
