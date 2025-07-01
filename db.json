@@ -1,18 +1,23 @@
 {
   "burgers": [
     {
-      "id": 1,
-      "name": "Veggie",
+      "id": "58de",
+      "name": "Nothing Compares 2 Blue (Cheese) Burger",
       "price": "$5.95"
     },
     {
-      "id": 2,
-      "name": "Bacon",
-      "price": "$7.95"
+      "id": "6ff8",
+      "name": "CHARD TO A CRISP BURGER",
+      "price": "$5.95"
     },
     {
-      "id": 1,
-      "name": "Onion",
+      "id": "a43b",
+      "name": "Is This Your Chard Burger",
+      "price": "$5.95"
+    },
+    {
+      "id": "fd51",
+      "name": "Parma Parma Parma Chameleon Burger - with Parmesan crisp",
       "price": "$5.95"
     }
   ]
