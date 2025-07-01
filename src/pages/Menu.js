@@ -13,8 +13,9 @@ function Menu() {
   }, [])
   return (
     <>
-      <h1>Menu Page</h1>
+      <h1>Welcome to Bob's Burgers</h1>
       <div>
+        <h2>Menu</h2>
         <ul>
           {burgers.map((burger) => (
             <MenuItem key={burger.id} burger={burger} />
