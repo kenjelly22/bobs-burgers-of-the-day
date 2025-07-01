@@ -7,6 +7,12 @@ const Search = () => {
 
   const handleChange = ({target: {value}}) => {
     setSearchTerm(value)
+
+    if (!value.trim()) {
+      setSearchResults([])
+      return
+    }
+
     fetch("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
       .then((r) => r.json())
       .then((burgers) => {
