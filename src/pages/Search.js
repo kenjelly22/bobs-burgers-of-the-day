@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import SearchResults from "../components/SearchResults"
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -6,9 +7,6 @@ const Search = () => {
 
   const handleChange = ({target: {value}}) => {
     setSearchTerm(value)
-  }
-
-  const handleSearch = () => {
     fetch("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
       .then((r) => r.json())
       .then((burgers) => {
@@ -16,7 +14,6 @@ const Search = () => {
           burger.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
         setSearchResults(filteredBurgers)
-        setSearchTerm("")
       })
   }
 
@@ -32,7 +29,13 @@ const Search = () => {
           placeholder="search burgers..."
           onChange={handleChange}
         />
-        <button onClick={handleSearch}>Search</button>
+      </div>
+      <div>
+        <ul>
+          {searchResults.map((burger) => (
+            <SearchResults key={burger.id} burger={burger} />
+          ))}
+        </ul>
       </div>
     </div>
   )
