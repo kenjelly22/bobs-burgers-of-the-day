@@ -3,17 +3,17 @@
     {
       "id": 1,
       "name": "Veggie",
-      "price": 5.95
+      "price": "$5.95"
     },
     {
       "id": 2,
       "name": "Bacon",
-      "price": 7.95
+      "price": "$7.95"
     },
     {
       "id": 1,
       "name": "Onion",
-      "price": 5.95
+      "price": "$5.95"
     }
   ]
 }
