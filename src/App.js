@@ -1,23 +1,29 @@
-import "./App.css"
+import {useState, useEffect} from "react"
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Menu from "./pages/Menu"
+import Search from "./pages/Search"
+import Create from "./pages/Create"
+import NavBar from "./components/NavBar"
 
 function App() {
+  const [burgers, setBurgers] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:3001/burgers/")
+      .then((r) => r.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error))
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello!
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Menu />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/create" element={<Create />} />
+      </Routes>
+    </Router>
   )
 }
 

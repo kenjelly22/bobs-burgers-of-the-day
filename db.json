@@ -2,15 +2,18 @@
   "burgers": [
     {
       "id": 1,
-      "name": "Veggie"
+      "name": "Veggie",
+      "price": "$5.95"
     },
     {
       "id": 2,
-      "name": "Bacon"
+      "name": "Bacon",
+      "price": "$7.95"
     },
     {
       "id": 1,
-      "name": "Onion"
+      "name": "Onion",
+      "price": "$5.95"
     }
   ]
 }
