@@ -2,7 +2,7 @@ import React, {useState} from "react"
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("")
-  const [allBurgers, setAllBurgers] = useState([])
+  const [searchResults, setSearchResults] = useState([])
 
   const handleChange = ({target: {value}}) => {
     setSearchTerm(value)
@@ -12,11 +12,11 @@ const Search = () => {
     fetch("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
       .then((r) => r.json())
       .then((burgers) => {
-        setAllBurgers(burgers)
         const filteredBurgers = burgers.filter((burger) =>
           burger.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
-        setAllBurgers(filteredBurgers)
+        setSearchResults(filteredBurgers)
+        setSearchTerm("")
       })
   }
 
@@ -29,7 +29,7 @@ const Search = () => {
           type="text"
           id="search"
           value={searchTerm}
-          placeholder="Search for new Burger"
+          placeholder="search burgers..."
           onChange={handleChange}
         />
         <button onClick={handleSearch}>Search</button>
