@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3001/burgers/")
       .then((r) => r.json())
-      .then((data) => console.log(data))
+      .then((data) => setBurgers(data))
       .catch((error) => console.error(error))
   }, [])
 
