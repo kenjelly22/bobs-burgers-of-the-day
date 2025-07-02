@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import BurgerForm from "../components/BurgerForm"
 
 const Create = ({setBurgers}) => {
   const [newBurger, setNewBurger] = useState({
@@ -36,33 +37,11 @@ const Create = ({setBurgers}) => {
 
   return (
     <div className="container">
-      <form className="add-burger-form" onSubmit={handleSubmit}>
-        <h3>Create a Burger</h3>
-        <input
-          type="text"
-          name="name"
-          value={newBurger.name}
-          placeholder="burger name..."
-          className="input-text"
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="text"
-          name="price"
-          value={newBurger.price}
-          placeholder="burger price..."
-          className="input-text"
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="submit"
-          name="submit"
-          value="Create New Burger"
-          className="submit"
-        />
-      </form>
+      <BurgerForm
+        newBurger={newBurger}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      />
     </div>
   )
 }
