@@ -1,5 +1,6 @@
 import React from "react"
 import MenuItem from "../components/MenuItem"
+import "./Menu.css"
 
 function Menu({burgers, setBurgers}) {
   const handleDelete = (deletedBurger) => {
@@ -8,13 +9,21 @@ function Menu({burgers, setBurgers}) {
   }
 
   return (
-    <div>
-      <h2>Menu</h2>
-      <ul>
-        {burgers.map((burger) => (
-          <MenuItem key={burger.id} burger={burger} onDelete={handleDelete} />
-        ))}
-      </ul>
+    <div className="menu-wrapper">
+      <div className="chalkboard">
+        <h2>Menu</h2>
+        <table>
+          <tbody>
+            {burgers.map((burger) => (
+              <MenuItem
+                key={burger.id}
+                burger={burger}
+                onDelete={handleDelete}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
