@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import "./index.css"
 import Menu from "./pages/Menu"
 import Search from "./pages/Search"
 import Create from "./pages/Create"
