@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import {Routes, Route} from "react-router-dom"
 import "./App.css"
 import Menu from "./pages/Menu"
 import Search from "./pages/Search"
@@ -20,17 +20,15 @@ function App() {
   return (
     <>
       <Header />
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route
-            path="/"
-            element={<Menu burgers={burgers} setBurgers={setBurgers} />}
-          />
-          <Route path="/search" element={<Search setBurgers={setBurgers} />} />
-          <Route path="/create" element={<Create setBurgers={setBurgers} />} />
-        </Routes>
-      </Router>
+      <NavBar />
+      <Routes>
+        <Route
+          path="/"
+          element={<Menu burgers={burgers} setBurgers={setBurgers} />}
+        />
+        <Route path="/search" element={<Search setBurgers={setBurgers} />} />
+        <Route path="/create" element={<Create setBurgers={setBurgers} />} />
+      </Routes>
     </>
   )
 }
