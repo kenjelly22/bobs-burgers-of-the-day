@@ -9,7 +9,7 @@ const formatName = (name) => {
     .join(" ")
 }
 
-const Search = () => {
+const Search = ({setBurgers}) => {
   const [searchTerm, setSearchTerm] = useState("")
   const [burgerList, setBurgerList] = useState([])
 
@@ -52,7 +52,11 @@ const Search = () => {
       <div>
         <ul>
           {burgerList.map((burger) => (
-            <SearchResults key={burger.id} burger={burger} />
+            <SearchResults
+              key={burger.id}
+              burger={burger}
+              setBurgers={setBurgers}
+            />
           ))}
         </ul>
       </div>

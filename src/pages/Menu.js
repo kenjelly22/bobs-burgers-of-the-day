@@ -1,17 +1,7 @@
-import {useEffect, useState} from "react"
+import React from "react"
 import MenuItem from "../components/MenuItem"
 
-function Menu() {
-  const [burgers, setBurgers] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:3001/burgers")
-      .then((r) => r.json())
-      .then((burgers) => {
-        setBurgers(burgers)
-      })
-  }, [])
-
+function Menu({burgers, setBurgers}) {
   const handleDelete = (deletedBurger) => {
     const updatedMenu = burgers.filter((burger) => burger.id !== deletedBurger)
     setBurgers(updatedMenu)
