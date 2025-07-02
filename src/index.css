@@ -14,7 +14,8 @@ button {
   white-space: nowrap;
 }
 
-.table-wrapper {
+.table-wrapper,
+.create-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,15 +30,9 @@ table {
   font-size: 1.2em;
 }
 
-th,
 td {
   padding: 12px 20px;
   border-bottom: 1px solid #aaa;
-}
-
-th {
-  text-align: left;
-  color: #eee;
 }
 
 tr:hover {
