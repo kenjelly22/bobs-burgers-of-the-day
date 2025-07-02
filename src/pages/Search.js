@@ -1,15 +1,14 @@
 import React, {useState} from "react"
 import SearchResults from "../components/SearchResults"
 
-const Search = () => {
+const Search = ({burgerList, setBurgerList}) => {
   const [searchTerm, setSearchTerm] = useState("")
-  const [searchResults, setSearchResults] = useState([])
 
   const handleChange = ({target: {value}}) => {
     setSearchTerm(value)
 
     if (!value.trim()) {
-      setSearchResults([])
+      setBurgerList([])
       return
     }
 
@@ -19,7 +18,7 @@ const Search = () => {
         const filteredBurgers = burgers.filter((burger) =>
           burger.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
-        setSearchResults(filteredBurgers)
+        setBurgerList(filteredBurgers)
       })
   }
 
@@ -38,7 +37,7 @@ const Search = () => {
       </div>
       <div>
         <ul>
-          {searchResults.map((burger) => (
+          {burgerList.map((burger) => (
             <SearchResults key={burger.id} burger={burger} />
           ))}
         </ul>
