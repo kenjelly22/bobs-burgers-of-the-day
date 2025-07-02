@@ -3,3 +3,12 @@
   text-align: center;
   padding-top: 1rem;
 }
+
+.header-title {
+  font-family: "Shantell Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 60px;
+  font-variation-settings: "BNCE" 0, "INFM" 0, "SPAC" 0;
+}
