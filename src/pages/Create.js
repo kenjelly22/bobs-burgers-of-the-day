@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-const Create = ({setBurgerList}) => {
+const Create = ({setBurgers}) => {
   const [newBurger, setNewBurger] = useState({
     name: "",
     price: "",
@@ -29,7 +29,7 @@ const Create = ({setBurgerList}) => {
     })
       .then((r) => r.json())
       .then((createdBurger) => {
-        setBurgerList((prev) => [...prev, createdBurger])
+        setBurgers((prev) => [...prev, createdBurger])
         setNewBurger({name: "", price: ""})
       })
   }

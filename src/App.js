@@ -7,7 +7,6 @@ import NavBar from "./components/NavBar"
 
 function App() {
   const [burgers, setBurgers] = useState([])
-  const [burgerList, setBurgerList] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:3001/burgers/")
@@ -21,16 +20,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Menu />} />
-        <Route
-          path="/search"
-          element={
-            <Search burgerList={burgerList} setBurgerList={setBurgerList} />
-          }
-        />
-        <Route
-          path="/create"
-          element={<Create setBurgerList={setBurgerList} />}
-        />
+        <Route path="/search" element={<Search />} />
+        <Route path="/create" element={<Create setBurgers={setBurgers} />} />
       </Routes>
     </Router>
   )
