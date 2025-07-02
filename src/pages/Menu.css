@@ -1,7 +1,6 @@
 .chalkboard {
+  margin-top: 50px;
   background-color: #2b2b2b;
-  /* background: #2b2b2b
-    url("https://www.transparenttextures.com/patterns/chalkboard.png"); */
   border: 10px solid rgb(161, 27, 27);
   border-radius: 12px;
   padding: 40px;
@@ -12,10 +11,8 @@
 }
 
 .menu-wrapper {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   text-align: center;
