@@ -8,17 +8,14 @@ function Menu({burgers, setBurgers}) {
   }
 
   return (
-    <>
-      <h1>Welcome to Bob's Burgers</h1>
-      <div>
-        <h2>Menu</h2>
-        <ul>
-          {burgers.map((burger) => (
-            <MenuItem key={burger.id} burger={burger} onDelete={handleDelete} />
-          ))}
-        </ul>
-      </div>
-    </>
+    <div>
+      <h2>Menu</h2>
+      <ul>
+        {burgers.map((burger) => (
+          <MenuItem key={burger.id} burger={burger} onDelete={handleDelete} />
+        ))}
+      </ul>
+    </div>
   )
 }
 export default Menu

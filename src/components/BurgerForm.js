@@ -14,7 +14,7 @@ const BurgerForm = ({newBurger, onChange, onSubmit}) => {
       />
       <br />
       <input
-        type="text"
+        type="number"
         name="price"
         value={newBurger.price}
         placeholder="burger price..."
