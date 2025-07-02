@@ -22,7 +22,7 @@ const Create = ({setBurgers}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    fetch("http://localhost:3001/burgers", {
+    fetch("https://bobs-burgers-data.onrender.com/burgers/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
