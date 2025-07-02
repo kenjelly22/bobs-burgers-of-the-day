@@ -2,7 +2,7 @@ import React from "react"
 
 const MenuItem = ({burger, onDelete}) => {
   const handleDeleteClick = () => {
-    fetch(`http://localhost:3001/burgers/${burger.id}`, {
+    fetch(`https://bobs-burgers-data.onrender.com/burgers/${burger.id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
