@@ -9,7 +9,7 @@ function Menu({burgers, setBurgers}) {
   }
 
   return (
-    <div className="menu-wrapper">
+    <div className="table-wrapper">
       <div className="chalkboard">
         <h2>Menu</h2>
         <table>

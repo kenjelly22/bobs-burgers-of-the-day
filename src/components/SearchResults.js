@@ -20,10 +20,13 @@ const SearchResults = ({burger, setBurgers}) => {
   }
 
   return (
-    <li>
-      {burger.name} - {burger.price}
-      <button onClick={handleAddBurger}>Add to Menu</button>
-    </li>
+    <tr>
+      <td>{burger.name}</td>
+      <td>{burger.price}</td>
+      <td>
+        <button onClick={handleAddBurger}>Add to Menu</button>
+      </td>
+    </tr>
   )
 }
 

@@ -49,16 +49,18 @@ const Search = ({setBurgers}) => {
           onChange={handleChange}
         />
       </div>
-      <div>
-        <ul>
-          {burgerList.map((burger) => (
-            <SearchResults
-              key={burger.id}
-              burger={burger}
-              setBurgers={setBurgers}
-            />
-          ))}
-        </ul>
+      <div className="table-wrapper">
+        <table>
+          <tbody>
+            {burgerList.map((burger) => (
+              <SearchResults
+                key={burger.id}
+                burger={burger}
+                setBurgers={setBurgers}
+              />
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   )
