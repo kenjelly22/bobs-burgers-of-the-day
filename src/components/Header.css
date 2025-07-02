@@ -1,3 +1,9 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .header-container {
   background-color: white;
   text-align: center;
@@ -5,10 +11,12 @@
 }
 
 .header-title {
-  font-family: "Shantell Sans", cursive;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
   font-size: 60px;
   font-variation-settings: "BNCE" 0, "INFM" 0, "SPAC" 0;
+}
+
+.navbar-nav {
+  font-size: 25px;
+  display: flex;
+  gap: 1rem;
 }

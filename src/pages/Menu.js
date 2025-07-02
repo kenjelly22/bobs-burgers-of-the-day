@@ -9,15 +9,21 @@ function Menu({burgers, setBurgers}) {
   }
 
   return (
-    <div className="chalkboard">
-      <h2>Menu</h2>
-      <table>
-        <tbody>
-          {burgers.map((burger) => (
-            <MenuItem key={burger.id} burger={burger} onDelete={handleDelete} />
-          ))}
-        </tbody>
-      </table>
+    <div className="menu-wrapper">
+      <div className="chalkboard">
+        <h2>Menu</h2>
+        <table>
+          <tbody>
+            {burgers.map((burger) => (
+              <MenuItem
+                key={burger.id}
+                burger={burger}
+                onDelete={handleDelete}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
