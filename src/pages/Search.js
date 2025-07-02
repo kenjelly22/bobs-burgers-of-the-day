@@ -31,7 +31,7 @@ const Search = ({setBurgers}) => {
         }))
 
         const filteredBurgers = reFormattedName.filter((burger) =>
-          burger.name.toLowerCase().includes(searchTerm.toLowerCase())
+          burger.name.toLowerCase().includes(value.toLowerCase())
         )
         setBurgerList(filteredBurgers)
       })
