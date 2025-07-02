@@ -10,11 +10,13 @@ function Menu({burgers, setBurgers}) {
   return (
     <div>
       <h2>Menu</h2>
-      <ul>
-        {burgers.map((burger) => (
-          <MenuItem key={burger.id} burger={burger} onDelete={handleDelete} />
-        ))}
-      </ul>
+      <table>
+        <tbody>
+          {burgers.map((burger) => (
+            <MenuItem key={burger.id} burger={burger} onDelete={handleDelete} />
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }

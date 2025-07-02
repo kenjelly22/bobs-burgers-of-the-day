@@ -10,10 +10,12 @@ const MenuItem = ({burger, onDelete}) => {
   }
 
   return (
-    <li>
-      {burger.name} - {burger.price}
-      <button onClick={handleDeleteClick}>Delete</button>
-    </li>
+    <tr>
+      <td>
+        <button onClick={handleDeleteClick}>X</button>
+      </td>
+      <td>{burger.name}</td> <td>{burger.price}</td>
+    </tr>
   )
 }
 
