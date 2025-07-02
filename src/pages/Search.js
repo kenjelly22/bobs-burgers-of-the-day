@@ -1,6 +1,14 @@
 import React, {useState} from "react"
 import SearchResults from "../components/SearchResults"
 
+const formatName = (name) => {
+  return name
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ")
+}
+
 const Search = ({burgerList, setBurgerList}) => {
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -15,7 +23,12 @@ const Search = ({burgerList, setBurgerList}) => {
     fetch("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
       .then((r) => r.json())
       .then((burgers) => {
-        const filteredBurgers = burgers.filter((burger) =>
+        const reFormattedName = burgers.map((burger) => ({
+          ...burger,
+          name: formatName(burger.name),
+        }))
+
+        const filteredBurgers = reFormattedName.filter((burger) =>
           burger.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
         setBurgerList(filteredBurgers)

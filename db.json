@@ -5,11 +5,7 @@
       "name": "Nothing Compares 2 Blue (Cheese) Burger",
       "price": "$5.95"
     },
-    {
-      "id": "6ff8",
-      "name": "CHARD TO A CRISP BURGER",
-      "price": "$5.95"
-    },
+
     {
       "id": "a43b",
       "name": "Is This Your Chard Burger",
@@ -18,6 +14,16 @@
     {
       "id": "fd51",
       "name": "Parma Parma Parma Chameleon Burger - with Parmesan crisp",
+      "price": "$5.95"
+    },
+    {
+      "id": "1604",
+      "name": "Chevre Which Way But Loose Burger",
+      "price": "$5.95"
+    },
+    {
+      "id": "61ed",
+      "name": "Tunami",
       "price": "$5.95"
     }
   ]
