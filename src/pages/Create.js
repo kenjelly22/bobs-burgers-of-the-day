@@ -5,6 +5,15 @@ const Create = () => {
     name: "",
     price: "",
   })
+
+  const handleChange = ({target: {name, value}}) => {
+    const updatedBurger = {
+      ...newBurger,
+      [name]: value,
+    }
+    setNewBurger(updatedBurger)
+  }
+
   return (
     <div className="container">
       <form className="add-burger-form">
@@ -15,6 +24,7 @@ const Create = () => {
           value={newBurger.name}
           placeholder="burger name..."
           className="input-text"
+          onChange={handleChange}
         />
         <br />
         <input
@@ -23,6 +33,7 @@ const Create = () => {
           value={newBurger.price}
           placeholder="burger price..."
           className="input-text"
+          onChange={handleChange}
         />
         <br />
         <input
