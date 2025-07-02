@@ -19,8 +19,11 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Menu />} />
-        <Route path="/search" element={<Search />} />
+        <Route
+          path="/"
+          element={<Menu burgers={burgers} setBurgers={setBurgers} />}
+        />
+        <Route path="/search" element={<Search setBurgers={setBurgers} />} />
         <Route path="/create" element={<Create setBurgers={setBurgers} />} />
       </Routes>
     </Router>

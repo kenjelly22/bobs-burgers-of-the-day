@@ -1,8 +1,6 @@
 import React, {useState} from "react"
 
-const SearchResults = ({burger}) => {
-  const [burgerList, setBurgerList] = useState([])
-
+const SearchResults = ({burger, setBurgers}) => {
   const handleAddBurger = () => {
     const selectedBurger = {
       name: burger.name,
@@ -16,12 +14,9 @@ const SearchResults = ({burger}) => {
       body: JSON.stringify(selectedBurger),
     })
       .then((r) => r.json())
-      .then((selectedBurger) =>
-        setBurgerList({
-          ...burgerList,
-          selectedBurger,
-        })
-      )
+      .then((selectedBurger) => {
+        setBurgers((prev) => [...prev, selectedBurger])
+      })
   }
 
   return (
