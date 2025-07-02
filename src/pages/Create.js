@@ -28,7 +28,7 @@ const Create = () => {
         <input
           type="submit"
           name="submit"
-          value="Create New Toy"
+          value="Create New Burger"
           className="submit"
         />
       </form>
