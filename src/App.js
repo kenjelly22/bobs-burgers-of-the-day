@@ -1,10 +1,11 @@
 import {useState, useEffect} from "react"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import "./index.css"
+import "./App.css"
 import Menu from "./pages/Menu"
 import Search from "./pages/Search"
 import Create from "./pages/Create"
 import NavBar from "./components/NavBar"
+import Header from "./components/Header"
 
 function App() {
   const [burgers, setBurgers] = useState([])
@@ -17,17 +18,20 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route
-          path="/"
-          element={<Menu burgers={burgers} setBurgers={setBurgers} />}
-        />
-        <Route path="/search" element={<Search setBurgers={setBurgers} />} />
-        <Route path="/create" element={<Create setBurgers={setBurgers} />} />
-      </Routes>
-    </Router>
+    <>
+      <Header />
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route
+            path="/"
+            element={<Menu burgers={burgers} setBurgers={setBurgers} />}
+          />
+          <Route path="/search" element={<Search setBurgers={setBurgers} />} />
+          <Route path="/create" element={<Create setBurgers={setBurgers} />} />
+        </Routes>
+      </Router>
+    </>
   )
 }
 
