@@ -1,25 +1,37 @@
 import React, {useState} from "react"
 import SearchResults from "../components/SearchResults"
 
-const Search = () => {
+const formatName = (name) => {
+  return name
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ")
+}
+
+const Search = ({burgerList, setBurgerList}) => {
   const [searchTerm, setSearchTerm] = useState("")
-  const [searchResults, setSearchResults] = useState([])
 
   const handleChange = ({target: {value}}) => {
     setSearchTerm(value)
 
     if (!value.trim()) {
-      setSearchResults([])
+      setBurgerList([])
       return
     }
 
     fetch("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
       .then((r) => r.json())
       .then((burgers) => {
-        const filteredBurgers = burgers.filter((burger) =>
+        const reFormattedName = burgers.map((burger) => ({
+          ...burger,
+          name: formatName(burger.name),
+        }))
+
+        const filteredBurgers = reFormattedName.filter((burger) =>
           burger.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
-        setSearchResults(filteredBurgers)
+        setBurgerList(filteredBurgers)
       })
   }
 
@@ -38,7 +50,7 @@ const Search = () => {
       </div>
       <div>
         <ul>
-          {searchResults.map((burger) => (
+          {burgerList.map((burger) => (
             <SearchResults key={burger.id} burger={burger} />
           ))}
         </ul>
