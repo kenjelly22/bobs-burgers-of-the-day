@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import BurgerForm from "../components/BurgerForm"
+import "./Create.css"
 
 const Create = ({setBurgers}) => {
   const [newBurger, setNewBurger] = useState({
@@ -36,7 +37,7 @@ const Create = ({setBurgers}) => {
   }
 
   return (
-    <div className="container">
+    <div className="create-container">
       <BurgerForm
         newBurger={newBurger}
         onChange={handleChange}

@@ -3,13 +3,14 @@ import React from "react"
 const BurgerForm = ({newBurger, onChange, onSubmit}) => {
   return (
     <form className="add-burger-form" onSubmit={onSubmit}>
-      <h3>Create a Burger</h3>
+      <h1>Create a Burger</h1>
+      <p>Create your own burger below and it will be added to the Menu!</p>
       <input
         type="text"
         name="name"
         value={newBurger.name}
         placeholder="burger name..."
-        className="input-text"
+        className="create input-text"
         onChange={onChange}
       />
       <br />
@@ -18,7 +19,7 @@ const BurgerForm = ({newBurger, onChange, onSubmit}) => {
         name="price"
         value={newBurger.price}
         placeholder="burger price..."
-        className="input-text"
+        className="create input-text"
         onChange={onChange}
       />
       <br />
