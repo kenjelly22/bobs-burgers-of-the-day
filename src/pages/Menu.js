@@ -8,7 +8,7 @@ function Menu({burgers, setBurgers}) {
   }
 
   return (
-    <div className>
+    <div>
       <h2>Menu</h2>
       <ul>
         {burgers.map((burger) => (
