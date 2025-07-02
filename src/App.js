@@ -4,7 +4,6 @@ import "./App.css"
 import Menu from "./pages/Menu"
 import Search from "./pages/Search"
 import Create from "./pages/Create"
-import NavBar from "./components/NavBar"
 import Header from "./components/Header"
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
   return (
     <>
       <Header />
-      <NavBar />
       <Routes>
         <Route
           path="/"
