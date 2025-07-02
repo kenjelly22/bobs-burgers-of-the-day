@@ -14,7 +14,8 @@ const MenuItem = ({burger, onDelete}) => {
       <td>
         <button onClick={handleDeleteClick}>X</button>
       </td>
-      <td>{burger.name}</td> <td>{burger.price}</td>
+      <td>{burger.name}</td>
+      <td>{burger.price}</td>
     </tr>
   )
 }

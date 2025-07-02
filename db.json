@@ -1,12 +1,6 @@
 {
   "burgers": [
     {
-      "id": "58de",
-      "name": "Nothing Compares 2 Blue (Cheese) Burger",
-      "price": "$5.95"
-    },
-
-    {
       "id": "a43b",
       "name": "Is This Your Chard Burger",
       "price": "$5.95"

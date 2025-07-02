@@ -1,11 +1,19 @@
 body {
-  color: red;
   background-image: url("../public/images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
   margin: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5); /* white tint */
+  z-index: -1;
 }
 
 code {

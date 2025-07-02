@@ -1,5 +1,6 @@
 import React from "react"
 import MenuItem from "../components/MenuItem"
+import "./Menu.css"
 
 function Menu({burgers, setBurgers}) {
   const handleDelete = (deletedBurger) => {
@@ -8,7 +9,7 @@ function Menu({burgers, setBurgers}) {
   }
 
   return (
-    <div>
+    <div className="chalkboard">
       <h2>Menu</h2>
       <table>
         <tbody>
