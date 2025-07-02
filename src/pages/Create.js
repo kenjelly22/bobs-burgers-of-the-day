@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import {useNavigate} from "react-router-dom"
 import BurgerForm from "../components/BurgerForm"
 import "./Create.css"
 
@@ -7,6 +8,8 @@ const Create = ({setBurgers}) => {
     name: "",
     price: "",
   })
+
+  const navigate = useNavigate()
 
   const handleChange = ({target: {name, value}}) => {
     const updatedBurger = {
@@ -33,6 +36,7 @@ const Create = ({setBurgers}) => {
       .then((createdBurger) => {
         setBurgers((prev) => [...prev, createdBurger])
         setNewBurger({name: "", price: ""})
+        navigate("/")
       })
   }
 
