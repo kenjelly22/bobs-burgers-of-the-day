@@ -1,11 +1,11 @@
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import "./NavBar.css"
 
 const NavBar = () => {
   return (
     <nav>
-      <Link to="/">Menu</Link> |<Link to="/search">Search</Link> |
-      <Link to="/create">Create</Link>
+      <NavLink to="/">Menu</NavLink> |<NavLink to="/search">Search</NavLink> |
+      <NavLink to="/create">Create</NavLink>
     </nav>
   )
 }
