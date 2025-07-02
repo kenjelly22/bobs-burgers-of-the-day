@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import SearchResults from "../components/SearchResults"
+import "./Search.css"
 
 const formatName = (name) => {
   return name
@@ -30,35 +31,39 @@ const Search = ({setBurgers}) => {
         }))
 
         const filteredBurgers = reFormattedName.filter((burger) =>
-          burger.name.toLowerCase().includes(searchTerm.toLowerCase())
+          burger.name.toLowerCase().includes(value.toLowerCase())
         )
         setBurgerList(filteredBurgers)
       })
   }
 
   return (
-    <div className="searchbar">
-      <h1>Find a Burger</h1>
-      <div>
-        <input
-          className="ui search"
-          type="text"
-          id="search"
-          value={searchTerm}
-          placeholder="search burgers..."
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <ul>
-          {burgerList.map((burger) => (
-            <SearchResults
-              key={burger.id}
-              burger={burger}
-              setBurgers={setBurgers}
-            />
-          ))}
-        </ul>
+    <div className="table-wrapper">
+      <div className="searchbar">
+        <h1>Find a Burger</h1>
+        <div>
+          <input
+            className="ui search"
+            type="text"
+            id="search"
+            value={searchTerm}
+            placeholder="search burgers..."
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <table>
+            <tbody>
+              {burgerList.map((burger) => (
+                <SearchResults
+                  key={burger.id}
+                  burger={burger}
+                  setBurgers={setBurgers}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )

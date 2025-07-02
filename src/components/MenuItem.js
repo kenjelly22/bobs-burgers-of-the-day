@@ -12,7 +12,9 @@ const MenuItem = ({burger, onDelete}) => {
   return (
     <tr>
       <td>
-        <button onClick={handleDeleteClick}>X</button>
+        <span onClick={handleDeleteClick} className="delete-icon" role="button">
+          ❌
+        </span>
       </td>
       <td>{burger.name}</td>
       <td>{burger.price}</td>
