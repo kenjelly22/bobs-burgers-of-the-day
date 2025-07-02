@@ -9,8 +9,9 @@ const formatName = (name) => {
     .join(" ")
 }
 
-const Search = ({burgerList, setBurgerList}) => {
+const Search = () => {
   const [searchTerm, setSearchTerm] = useState("")
+  const [burgerList, setBurgerList] = useState([])
 
   const handleChange = ({target: {value}}) => {
     setSearchTerm(value)
