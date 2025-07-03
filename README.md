@@ -30,9 +30,10 @@ To run this App locally, you will need to:
 
 - Clone the Repo
 - Run `npm install` to install dependencies
-- Run `npm json-server --watch db.json` to start the JSON server.
+- Run `npm run server` to start the JSON server.
+- This will open the server at http://localhost:3001/burgers
 - Run `npm start` to start the front-end
-- This will open the app in your browser at http://localhost:3001
+- This will open the app in your browser at http://localhost:3000
 
 Please Note: Make sure fetch requests match the backend address:
 
