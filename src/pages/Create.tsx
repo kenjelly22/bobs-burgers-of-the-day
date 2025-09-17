@@ -3,23 +3,33 @@ import {useNavigate} from "react-router-dom"
 import BurgerForm from "../components/BurgerForm"
 import "./Create.css"
 
-const Create = ({setBurgers}) => {
-  const [newBurger, setNewBurger] = useState({
+interface Burger {
+  name: string
+  price: string
+}
+
+interface CreateProps {
+  setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>
+}
+
+const Create: React.FC<CreateProps> = ({setBurgers}) => {
+  const [newBurger, setNewBurger] = useState<Burger>({
     name: "",
     price: "",
   })
 
   const navigate = useNavigate()
 
-  const handleChange = ({target: {name, value}}) => {
-    const updatedBurger = {
-      ...newBurger,
+  const handleChange = ({
+    target: {name, value},
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    setNewBurger((prev) => ({
+      ...prev,
       [name]: value,
-    }
-    setNewBurger(updatedBurger)
+    }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     fetch("https://bobs-burgers-data.onrender.com/burgers/", {
@@ -29,7 +39,7 @@ const Create = ({setBurgers}) => {
       },
       body: JSON.stringify({
         name: newBurger.name,
-        price: `$` + newBurger.price,
+        price: `$${newBurger.price}`,
       }),
     })
       .then((r) => r.json())
