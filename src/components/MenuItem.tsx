@@ -1,7 +1,18 @@
 import React from "react"
 
-const MenuItem = ({burger, onDelete}) => {
-  const handleDeleteClick = () => {
+export interface Burger {
+  id: number
+  name: string
+  price: string
+}
+
+interface MenuItemProps {
+  burger: Burger
+  onDelete: (id: number) => void
+}
+
+const MenuItem: React.FC<MenuItemProps> = ({burger, onDelete}) => {
+  const handleDeleteClick = (): void => {
     fetch(`https://bobs-burgers-data.onrender.com/burgers/${burger.id}`, {
       method: "DELETE",
     })
