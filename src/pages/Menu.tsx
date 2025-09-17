@@ -1,11 +1,15 @@
 import React from "react"
-import MenuItem from "../components/MenuItem"
+import MenuItem, {Burger} from "../components/MenuItem"
 import "./Menu.css"
 
-function Menu({burgers, setBurgers}) {
-  const handleDelete = (deletedBurger) => {
-    const updatedMenu = burgers.filter((burger) => burger.id !== deletedBurger)
-    setBurgers(updatedMenu)
+interface MenuProps {
+  burgers: Burger[]
+  setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>
+}
+
+const Menu: React.FC<MenuProps> = ({burgers, setBurgers}) => {
+  const handleDelete = (id: number) => {
+    setBurgers(burgers.filter((burger) => burger.id !== id))
   }
 
   return (
@@ -18,7 +22,7 @@ function Menu({burgers, setBurgers}) {
               <MenuItem
                 key={burger.id}
                 burger={burger}
-                onDelete={handleDelete}
+                onDeleteClick={handleDelete}
               />
             ))}
           </tbody>
