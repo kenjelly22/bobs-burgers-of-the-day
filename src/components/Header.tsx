@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./Header.css"
 import NavBar from "./NavBar"
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <>
       <header className="header-container">

@@ -18,9 +18,9 @@ const NavBar = () => {
             <li className="nav-item">
               <NavLink
                 to="/"
-                className="nav-link"
-                exact="true"
-                activeclassname="active"
+                className={({isActive}) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
               >
                 Menu
               </NavLink>
@@ -28,8 +28,9 @@ const NavBar = () => {
             <li className="nav-item">
               <NavLink
                 to="/search"
-                className="nav-link"
-                activeclassname="active"
+                className={({isActive}) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
               >
                 Search
               </NavLink>
@@ -37,8 +38,9 @@ const NavBar = () => {
             <li className="nav-item">
               <NavLink
                 to="/create"
-                className="nav-link"
-                activeclassname="active"
+                className={({isActive}) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
               >
                 Create
               </NavLink>

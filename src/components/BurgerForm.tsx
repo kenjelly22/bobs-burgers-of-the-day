@@ -1,6 +1,17 @@
 import React from "react"
+import {Burger} from "../types"
 
-const BurgerForm = ({newBurger, onChange, onSubmit}) => {
+interface BurgerFormProps {
+  newBurger: Omit<Burger, "id">
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
+}
+
+const BurgerForm: React.FC<BurgerFormProps> = ({
+  newBurger,
+  onChange,
+  onSubmit,
+}) => {
   return (
     <form className="add-burger-form" onSubmit={onSubmit}>
       <h1>Create a Burger</h1>
