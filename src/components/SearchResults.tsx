@@ -1,6 +1,17 @@
 import React from "react"
 
-const SearchResults = ({burger, setBurgers}) => {
+interface Burger {
+  id: number
+  name: string
+  price: string
+}
+
+interface SearchResultsProps {
+  burger: Burger
+  setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>
+}
+
+const SearchResults: React.FC<SearchResultsProps> = ({burger, setBurgers}) => {
   const handleAddBurger = () => {
     const selectedBurger = {
       name: burger.name,
