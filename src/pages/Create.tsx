@@ -2,18 +2,19 @@ import React, {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import BurgerForm from "../components/BurgerForm"
 import "./Create.css"
+import {Burger} from "../components/MenuItem"
 
-interface Burger {
-  name: string
-  price: string
-}
+// interface Burger {
+//   name: string
+//   price: string
+// }
 
 interface CreateProps {
   setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>
 }
 
 const Create: React.FC<CreateProps> = ({setBurgers}) => {
-  const [newBurger, setNewBurger] = useState<Burger>({
+  const [newBurger, setNewBurger] = useState<Omit<Burger, "id">>({
     name: "",
     price: "",
   })
