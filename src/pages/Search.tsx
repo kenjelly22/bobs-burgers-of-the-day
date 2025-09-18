@@ -2,7 +2,17 @@ import React, {useState} from "react"
 import SearchResults from "../components/SearchResults"
 import "./Search.css"
 
-const formatName = (name) => {
+interface Burger {
+  id: number
+  name: string
+  price: string
+}
+
+interface SearchProps {
+  setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>
+}
+
+const formatName = (name: string): string => {
   return name
     .toLowerCase()
     .split(" ")
@@ -10,11 +20,12 @@ const formatName = (name) => {
     .join(" ")
 }
 
-const Search = ({setBurgers}) => {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [burgerList, setBurgerList] = useState([])
+const Search: React.FC<SearchProps> = ({setBurgers}) => {
+  const [searchTerm, setSearchTerm] = useState<string>("")
+  const [burgerList, setBurgerList] = useState<Burger[]>([])
 
-  const handleChange = ({target: {value}}) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
     setSearchTerm(value)
 
     if (!value.trim()) {
@@ -24,7 +35,7 @@ const Search = ({setBurgers}) => {
 
     fetch("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
       .then((r) => r.json())
-      .then((burgers) => {
+      .then((burgers: Burger[]) => {
         const reFormattedName = burgers.map((burger) => ({
           ...burger,
           name: formatName(burger.name),
