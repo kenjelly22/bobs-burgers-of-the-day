@@ -1,12 +1,8 @@
 import React from "react"
-
-interface Burger {
-  name: string
-  price: string
-}
+import {Burger} from "../types"
 
 interface BurgerFormProps {
-  newBurger: Burger
+  newBurger: Omit<Burger, "id">
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
 }

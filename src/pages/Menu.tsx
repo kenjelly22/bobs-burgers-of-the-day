@@ -1,6 +1,7 @@
 import React from "react"
-import MenuItem, {Burger} from "../components/MenuItem"
+import MenuItem from "../components/MenuItem"
 import "./Menu.css"
+import {Burger} from "../types"
 
 interface MenuProps {
   burgers: Burger[]

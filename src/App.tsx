@@ -5,7 +5,7 @@ import Menu from "./pages/Menu"
 import Search from "./pages/Search"
 import Create from "./pages/Create"
 import Header from "./components/Header"
-import {Burger} from "./components/MenuItem"
+import {Burger} from "./types"
 
 function App() {
   const [burgers, setBurgers] = useState<Burger[]>([])

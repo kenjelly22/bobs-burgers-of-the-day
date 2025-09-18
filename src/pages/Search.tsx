@@ -1,12 +1,7 @@
 import React, {useState} from "react"
 import SearchResults from "../components/SearchResults"
 import "./Search.css"
-
-interface Burger {
-  id: number
-  name: string
-  price: string
-}
+import {Burger} from "../types"
 
 interface SearchProps {
   setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>

@@ -2,12 +2,7 @@ import React, {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import BurgerForm from "../components/BurgerForm"
 import "./Create.css"
-import {Burger} from "../components/MenuItem"
-
-// interface Burger {
-//   name: string
-//   price: string
-// }
+import {Burger} from "../types"
 
 interface CreateProps {
   setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>

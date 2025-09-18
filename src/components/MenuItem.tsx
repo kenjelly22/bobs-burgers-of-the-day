@@ -1,10 +1,5 @@
 import React from "react"
-
-export interface Burger {
-  id: number
-  name: string
-  price: string
-}
+import {Burger} from "../types"
 
 interface MenuItemProps {
   burger: Burger
