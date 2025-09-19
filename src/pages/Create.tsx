@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import {useNavigate} from "react-router-dom"
 import BurgerForm from "../components/BurgerForm"
 import "./Create.css"
@@ -9,50 +9,24 @@ interface CreateProps {
 }
 
 const Create: React.FC<CreateProps> = ({setBurgers}) => {
-  const [newBurger, setNewBurger] = useState<Omit<Burger, "id">>({
-    name: "",
-    price: "",
-  })
-
   const navigate = useNavigate()
 
-  const handleChange = ({
-    target: {name, value},
-  }: React.ChangeEvent<HTMLInputElement>) => {
-    setNewBurger((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
+  const handleCreate = (data: Omit<Burger, "id">) => {
     fetch("https://bobs-burgers-data.onrender.com/burgers/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: newBurger.name,
-        price: `$${newBurger.price}`,
-      }),
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({...data, price: `$${data.price}`}),
     })
       .then((r) => r.json())
       .then((createdBurger) => {
         setBurgers((prev) => [...prev, createdBurger])
-        setNewBurger({name: "", price: ""})
         navigate("/")
       })
   }
 
   return (
     <div className="create-container">
-      <BurgerForm
-        newBurger={newBurger}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-      />
+      <BurgerForm onSubmit={handleCreate} />
     </div>
   )
 }
