@@ -22,7 +22,7 @@ const BurgerForm: React.FC<BurgerFormProps> = ({onSubmit}) => {
       >
         <h1>Create a Burger</h1>
         <p>Create your own burger below and it will be added to the Menu!</p>
-        <div className="form-control">
+        <div>
           <input
             type="text"
             placeholder="burger name..."
@@ -38,7 +38,7 @@ const BurgerForm: React.FC<BurgerFormProps> = ({onSubmit}) => {
         </div>
         <br />
 
-        <div className="form-control">
+        <div>
           <input
             type="number"
             placeholder="burger price..."

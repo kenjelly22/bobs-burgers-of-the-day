@@ -16,10 +16,6 @@ body::before {
   z-index: -1;
 }
 
-.form-control {
-  margin-bottom: 20px;
-}
-
 .error {
   color: red;
   font-size: 12px;
