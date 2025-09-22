@@ -1,5 +1,6 @@
 import React from "react"
 import {Burger} from "../types"
+import {deleteBurger} from "../fetchHelper"
 
 interface MenuItemProps {
   burger: Burger
@@ -8,11 +9,9 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({burger, onDeleteClick}) => {
   const handleDeleteClick = (): void => {
-    fetch(`https://bobs-burgers-data.onrender.com/burgers/${burger.id}`, {
-      method: "DELETE",
-    })
-      .then((r) => r.json())
+    deleteBurger(burger.id)
       .then(() => onDeleteClick(burger.id))
+      .catch((err) => console.error(err))
   }
 
   return (

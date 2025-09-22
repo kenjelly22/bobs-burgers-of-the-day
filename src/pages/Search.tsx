@@ -2,17 +2,10 @@ import React, {useState} from "react"
 import SearchResults from "../components/SearchResults"
 import "./Search.css"
 import {Burger} from "../types"
+import {searchBurgers} from "../fetchHelper"
 
 interface SearchProps {
   setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>
-}
-
-const formatName = (name: string): string => {
-  return name
-    .toLowerCase()
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ")
 }
 
 const Search: React.FC<SearchProps> = ({setBurgers}) => {
@@ -27,20 +20,7 @@ const Search: React.FC<SearchProps> = ({setBurgers}) => {
       setBurgerList([])
       return
     }
-
-    fetch("https://bobsburgers-api.herokuapp.com/burgerOfTheDay/")
-      .then((r) => r.json())
-      .then((burgers: Burger[]) => {
-        const reFormattedName = burgers.map((burger) => ({
-          ...burger,
-          name: formatName(burger.name),
-        }))
-
-        const filteredBurgers = reFormattedName.filter((burger) =>
-          burger.name.toLowerCase().includes(value.toLowerCase())
-        )
-        setBurgerList(filteredBurgers)
-      })
+    searchBurgers(value).then(setBurgerList)
   }
 
   return (
