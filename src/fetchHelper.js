@@ -1,5 +1,3 @@
-import {Burger} from "./types"
-
 const BASE_URL = "http://localhost:3001/burgers/"
 
 const PRODUCTION_URL = "https://bobs-burgers-data.onrender.com/burgers/"
@@ -17,7 +15,18 @@ export async function getBurgers() {
   return response.json()
 }
 
-// fetchHelper.js
+export async function createBurger(data) {
+  const response = await fetch(API_URL, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      ...data,
+      price: `$${data.price}`,
+    }),
+  })
+  return response.json()
+}
+
 export async function searchBurgers(searchTerm) {
   try {
     const response = await fetch(
@@ -45,20 +54,12 @@ export async function searchBurgers(searchTerm) {
   }
 }
 
-export async function createBurger(data) {
+export async function addBurger(data) {
   const response = await fetch(API_URL, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      ...data,
-      price: `$${data.price}`,
-    }),
+    body: JSON.stringify(data),
   })
-
-  if (!response.ok) {
-    throw new Error("Failed to create burger")
-  }
-
   return response.json()
 }
 

@@ -4,7 +4,7 @@ import {deleteBurger} from "../fetchHelper"
 
 interface MenuItemProps {
   burger: Burger
-  onDeleteClick: (id: string) => void
+  onDeleteClick: (id: number) => void
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({burger, onDeleteClick}) => {

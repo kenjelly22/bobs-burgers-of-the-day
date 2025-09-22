@@ -1,28 +1,33 @@
 {
   "burgers": [
     {
-      "id": "fd51",
-      "name": "Parma Parma Parma Chameleon Burger - with Parmesan crisp",
+      "id": "e5f4",
+      "name": "Onion Burger - Grilled...to Death!",
       "price": "$5.95"
     },
     {
-      "id": "1604",
-      "name": "Chevre Which Way But Loose Burger",
+      "id": "3496",
+      "name": "Shoot Out At The Okra Corral Burger",
       "price": "$5.95"
     },
     {
-      "id": "2194",
-      "name": "Emergency Eggs-it Burger",
+      "id": "851b",
+      "name": "Last Of The Mo-jicama Burger (comes With Jicama)",
       "price": "$5.95"
     },
     {
-      "id": "76d7",
-      "name": "Pepper Don't Preach Burger",
-      "price": "$$5.95"
+      "id": "78e0",
+      "name": "Something's Not Fishy Burger - (100% Beef)",
+      "price": "$5.95"
     },
     {
-      "id": "9818",
-      "name": "New Burger on the Block",
+      "id": "75b4",
+      "name": "I'm Mad About Saffron (made With No Saffron)",
+      "price": "$5.95"
+    },
+    {
+      "id": "4bb8",
+      "name": "New Burger",
       "price": "$5.95"
     }
   ]

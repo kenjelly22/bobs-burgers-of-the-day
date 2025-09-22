@@ -1,6 +1,6 @@
 import React from "react"
 import {Burger} from "../types"
-import {createBurger} from "../fetchHelper"
+import {addBurger} from "../fetchHelper"
 
 interface SearchResultsProps {
   burger: Burger
@@ -9,12 +9,7 @@ interface SearchResultsProps {
 
 const SearchResults: React.FC<SearchResultsProps> = ({burger, setBurgers}) => {
   const handleAddBurger = () => {
-    const selectedBurger = {
-      name: burger.name,
-      price: burger.price,
-    }
-
-    createBurger(selectedBurger)
+    addBurger({name: burger.name, price: burger.price})
       .then((newBurger) => {
         setBurgers((prev) => [...prev, newBurger])
       })
