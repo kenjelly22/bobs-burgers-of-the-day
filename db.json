@@ -1,11 +1,6 @@
 {
   "burgers": [
     {
-      "id": "a43b",
-      "name": "Is This Your Chard Burger",
-      "price": "$5.95"
-    },
-    {
       "id": "fd51",
       "name": "Parma Parma Parma Chameleon Burger - with Parmesan crisp",
       "price": "$5.95"
@@ -13,11 +8,6 @@
     {
       "id": "1604",
       "name": "Chevre Which Way But Loose Burger",
-      "price": "$5.95"
-    },
-    {
-      "id": "61ed",
-      "name": "Tunami",
       "price": "$5.95"
     },
     {

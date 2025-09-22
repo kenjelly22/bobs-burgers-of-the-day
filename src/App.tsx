@@ -6,14 +6,15 @@ import Search from "./pages/Search"
 import Create from "./pages/Create"
 import Header from "./components/Header"
 import {Burger} from "./types"
+import {getBurgers} from "./fetchHelper"
 
 function App() {
   const [burgers, setBurgers] = useState<Burger[]>([])
 
   useEffect(() => {
-    fetch("https://bobs-burgers-data.onrender.com/burgers/")
-      .then((r) => r.json())
+    getBurgers()
       .then((data: Burger[]) => setBurgers(data))
+      .catch((err) => console.error(err))
   }, [])
 
   return (

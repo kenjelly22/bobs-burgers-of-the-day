@@ -1,5 +1,6 @@
 import React from "react"
 import {Burger} from "../types"
+import {createBurger} from "../fetchHelper"
 
 interface SearchResultsProps {
   burger: Burger
@@ -12,17 +13,12 @@ const SearchResults: React.FC<SearchResultsProps> = ({burger, setBurgers}) => {
       name: burger.name,
       price: burger.price,
     }
-    fetch("https://bobs-burgers-data.onrender.com/burgers/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(selectedBurger),
-    })
-      .then((r) => r.json())
-      .then((selectedBurger) => {
-        setBurgers((prev) => [...prev, selectedBurger])
+
+    createBurger(selectedBurger)
+      .then((newBurger) => {
+        setBurgers((prev) => [...prev, newBurger])
       })
+      .catch((err) => console.error(err))
   }
 
   return (

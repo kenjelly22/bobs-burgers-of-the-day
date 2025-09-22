@@ -9,7 +9,7 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({burgers, setBurgers}) => {
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     setBurgers(burgers.filter((burger) => burger.id !== id))
   }
 

@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom"
 import BurgerForm from "../components/BurgerForm"
 import "./Create.css"
 import {Burger} from "../types"
+import {createBurger} from "../fetchHelper"
 
 interface CreateProps {
   setBurgers: React.Dispatch<React.SetStateAction<Burger[]>>
@@ -11,17 +12,14 @@ interface CreateProps {
 const Create: React.FC<CreateProps> = ({setBurgers}) => {
   const navigate = useNavigate()
 
-  const handleCreate = (data: Omit<Burger, "id">) => {
-    fetch("https://bobs-burgers-data.onrender.com/burgers/", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({...data, price: `$${data.price}`}),
-    })
-      .then((r) => r.json())
-      .then((createdBurger) => {
-        setBurgers((prev) => [...prev, createdBurger])
-        navigate("/")
-      })
+  const handleCreate = async (data: Omit<Burger, "id">) => {
+    try {
+      const newBurger = await createBurger(data)
+      setBurgers((prev) => [...prev, newBurger])
+      navigate("/")
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   return (
