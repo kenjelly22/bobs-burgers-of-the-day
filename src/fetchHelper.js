@@ -17,6 +17,34 @@ export async function getBurgers() {
   return response.json()
 }
 
+// fetchHelper.js
+export async function searchBurgers(searchTerm) {
+  try {
+    const response = await fetch(
+      "https://bobsburgers-api.herokuapp.com/burgerOfTheDay/"
+    )
+    if (!response.ok) throw new Error("Failed to fetch burgers")
+
+    const burgers = await response.json()
+
+    const formatted = burgers.map((burger) => ({
+      ...burger,
+      name: burger.name
+        .toLowerCase()
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" "),
+    }))
+
+    return formatted.filter((burger) =>
+      burger.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  } catch (err) {
+    console.error(err)
+    return []
+  }
+}
+
 export async function createBurger(data) {
   const response = await fetch(API_URL, {
     method: "POST",

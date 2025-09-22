@@ -14,6 +14,16 @@
       "id": "2194",
       "name": "Emergency Eggs-it Burger",
       "price": "$5.95"
+    },
+    {
+      "id": "76d7",
+      "name": "Pepper Don't Preach Burger",
+      "price": "$$5.95"
+    },
+    {
+      "id": "9818",
+      "name": "New Burger on the Block",
+      "price": "$5.95"
     }
   ]
 }
